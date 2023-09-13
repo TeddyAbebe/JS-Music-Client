@@ -72,7 +72,7 @@ function MusicList() {
         <div css={search}>
           Search <FcMusic />{" "}
           <input
-            placeholder="Search..."
+            placeholder="Title.. Artist.. Album.. Genre.."
             css={inputStyles}
             value={searchQuery}
             onChange={handleSearchChange}
