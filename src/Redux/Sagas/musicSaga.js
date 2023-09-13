@@ -18,7 +18,7 @@ import {
   setStatisticsSuccess,
 } from "../Slices/musicSlice";
 
-const API_URL = "http://localhost:5000/api/music";
+const API_URL = "https://music-server-01zy.onrender.com/api/music";
 
 // Fetch Music List
 function* fetchMusicList() {
