@@ -76,7 +76,7 @@ function MusicList() {
   useEffect(() => {
     setTimeout(() => {
       setDataLoaded(true);
-    }, 1500);
+    }, 2000);
   }, []);
 
   return (

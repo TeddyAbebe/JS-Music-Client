@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { css } from "@emotion/react";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { IoIosClose } from "react-icons/io";
 import { HiOutlineMusicalNote } from "react-icons/hi2";
 
 const modalStyles = css`
@@ -64,17 +64,28 @@ const inputStyles = css`
 `;
 
 const closeStyles = css`
-  /* color: brown; */
-  float: right;
+  position: relative;
   font-size: 28px;
   font-weight: bold;
-  cursor: pointer;
-  :active {
-    transform: scale(0.3);
-    transition: 1.2s;
-  }
+  border: 1px solid;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
   :hover {
+    border-color: #bf0009;
+  }
+`;
+
+const closeIcon = css`
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.5s;
+  border: none;
+  :hover {
+    cursor: pointer;
     color: #bf0009;
+    transform: rotate(180deg);
   }
 `;
 
@@ -115,7 +126,7 @@ const EditModal = ({
     <div css={modalStyles} style={{ display: isOpen ? "block" : "none" }}>
       <div css={modalContentStyles}>
         <span css={closeStyles} onClick={onClose}>
-          <AiFillCloseCircle />
+          <IoIosClose css={closeIcon} />
         </span>
         <h2>Edit Music</h2>
         <form onSubmit={onFormSubmit} css={formStyles}>
