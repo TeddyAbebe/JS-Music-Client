@@ -10,7 +10,7 @@ import { css } from "@emotion/react";
 
 const containerStyles = css`
   width: 25%;
-  padding: 16px;
+  padding: 15px;
   background-color: #1e293b;
   border-radius: 20px;
   color: antiquewhite;

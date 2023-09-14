@@ -9,7 +9,7 @@ const modalStyles = css`
   position: fixed;
   z-index: 1;
   top: 0;
-  width: 100%;
+  width: 105%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
@@ -19,7 +19,7 @@ const modalStyles = css`
 
 const modalContentStyles = css`
   background-color: #fefefe;
-  margin: 4% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   max-width: 20rem;

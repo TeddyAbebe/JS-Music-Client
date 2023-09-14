@@ -67,12 +67,10 @@ function* removeMusic(action) {
 // Generate Statistics
 function* generateStatistics() {
   try {
-    console.log("Generate Statistics saga triggered");
     const response = yield call(axios.get, `${API_URL}/statistics`);
-    console.log("API response:", response.data);
+
     yield put(setStatisticsSuccess(response.data));
   } catch (error) {
-    console.error("API call error:", error);
     yield put(setStatisticsFailure(error.message));
   }
 }
