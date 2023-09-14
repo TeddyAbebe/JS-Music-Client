@@ -1,9 +1,9 @@
-// MusicList.js
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MusicCard from "./MusicCard";
 import { css } from "@emotion/react";
 import { FcMusic } from "react-icons/fc";
+import { RotatingLines } from "react-loader-spinner";
 
 const containerStyles = css`
   width: 50%;
@@ -58,12 +58,26 @@ const titleStyles = css`
   color: antiquewhite;
 `;
 
+const loadingStyles = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
 function MusicList() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDataLoaded(true);
+    }, 2000);
+  }, []);
 
   return (
     <div css={containerStyles}>
@@ -80,7 +94,19 @@ function MusicList() {
         </div>
       </div>
       <div css={cards}>
-        <MusicCard searchQuery={searchQuery} />
+        {dataLoaded ? (
+          <MusicCard searchQuery={searchQuery} />
+        ) : (
+          <div css={loadingStyles}>
+            <RotatingLines
+              strokeColor="grey"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="96"
+              visible={true}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
