@@ -59,6 +59,10 @@ const buttonStyles = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  :active {
+    transform: scale(0.3);
+    transition: 2s;
+  }
 `;
 
 const icon = css`

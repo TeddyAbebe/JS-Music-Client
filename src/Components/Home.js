@@ -54,6 +54,9 @@ const buttonStyles = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  :active {
+    transform: scale(0.9);
+  }
 `;
 
 function Home() {

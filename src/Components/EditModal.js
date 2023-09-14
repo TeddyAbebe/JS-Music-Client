@@ -59,33 +59,49 @@ const inputStyles = css`
   gap: 10px;
   font-weight: bold;
   font-size: 14px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   color: brown;
 `;
 
 const closeStyles = css`
-  color: brown;
+  /* color: brown; */
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  :active {
+    transform: scale(0.3);
+    transition: 1.2s;
+  }
+  :hover {
+    color: #bf0009;
+  }
 `;
 
 const buttonStyles = css`
   padding: 5px;
   border-radius: 5px;
-  background-color: #f0c14b;
+  background-color: #00a3bf;
   width: 30%;
   text-align: center;
   font-weight: bold;
   font-size: medium;
   font-family: serif;
-  color: #000;
+  color: white;
   cursor: pointer;
   border: 1px solid;
   display: flex;
   justify-content: center;
   align-items: center;
+  :active {
+    transform: scale(0.3);
+    transition: 1.2s;
+  }
+  :hover {
+    color: black;
+    background-color: #f0c14b;
+    border: 1px solid #f0c14b;
+  }
 `;
 
 const EditModal = ({
@@ -124,7 +140,7 @@ const EditModal = ({
               css={inputStyles}
             />
           </label>
-          
+
           <label css={labelStyles}>
             <strong>Album ...</strong>
 
