@@ -6,7 +6,19 @@ import {
   setStatisticsSuccess,
   setStatisticsFailure,
 } from "../Redux/Slices/musicSlice";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
+
+
+const slowMotionAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const containerStyles = css`
   width: 25%;
@@ -16,6 +28,11 @@ const containerStyles = css`
   color: antiquewhite;
   display: flex;
   flex-direction: column;
+  animation: ${slowMotionAnimation} 1.5s ease;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const totalStyle = css`

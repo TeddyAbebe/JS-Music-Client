@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { HiOutlineMusicalNote } from "react-icons/hi2";
 import { useDispatch } from "react-redux";
 import {
@@ -9,9 +9,19 @@ import {
   generateStatisticsRequest,
 } from "../Redux/Slices/musicSlice";
 
+const slowMotionAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const containerStyles = css`
   width: 20%;
-  margin-top: 10%;
   padding: 16px;
   border-radius: 20px;
   display: flex;
@@ -20,6 +30,11 @@ const containerStyles = css`
   align-items: center;
   gap: 8px;
   background-color: #1e293b;
+  animation: ${slowMotionAnimation} 1.5s ease;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const titleStyles = css`

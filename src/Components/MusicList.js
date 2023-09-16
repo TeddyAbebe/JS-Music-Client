@@ -1,9 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from "react";
 import MusicCard from "./MusicCard";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { FcMusic } from "react-icons/fc";
 import { RotatingLines } from "react-loader-spinner";
+
+
+
+const slowMotionAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const containerStyles = css`
   width: 50%;
@@ -14,6 +27,11 @@ const containerStyles = css`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  animation: ${slowMotionAnimation} 1.5s ease;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const cards = css`
