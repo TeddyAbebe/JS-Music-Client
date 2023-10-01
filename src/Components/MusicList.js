@@ -5,8 +5,6 @@ import { css, keyframes } from "@emotion/react";
 import { FcMusic } from "react-icons/fc";
 import { RotatingLines } from "react-loader-spinner";
 
-
-
 const slowMotionAnimation = keyframes`
   0% {
     opacity: 0;
@@ -41,11 +39,17 @@ const cards = css`
   border-radius: 20px;
   padding-top: 20px;
 
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer */
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #1e293b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: whitesmoke;
+    border-radius: 12px;
   }
 `;
 
