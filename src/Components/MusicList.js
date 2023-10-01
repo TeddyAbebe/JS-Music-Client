@@ -48,7 +48,7 @@ const cards = css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: whitesmoke;
+    background-color: #f8dab4;
     border-radius: 12px;
   }
 `;
