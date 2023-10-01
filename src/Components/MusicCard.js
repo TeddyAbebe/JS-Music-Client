@@ -11,7 +11,7 @@ import {
   removeMusicRequest,
   updateMusicRequest,
 } from "../Redux/Slices/musicSlice";
-import EditModal from "./EditModal"; // Import the EditModal component
+import EditModal from "./EditModal";
 
 const cardContainerStyles = css`
   display: flex;
